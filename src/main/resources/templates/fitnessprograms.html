@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Programs</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- Particles.js library -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Place behind content */
+        }
+        #webcoderskull {
+            position: relative;
+            color: white;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #webcoderskull h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            position: relative;
+            z-index: 1; /* Place above the particle effect */
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">Health and Wellness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/fitness}">Fitness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/nutrition}">Nutrition</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Explore Our Fitness Programs</h1>
+        <div class="row">
+            <!-- Yoga Program -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/yoga.jpg" class="card-img-top" alt="Yoga for Beginners">
+                    <div class="card-body">
+                        <h5 class="card-title">Yoga for Beginners</h5>
+                        <p class="card-text">Learn the basics of yoga to improve flexibility and reduce stress.</p>
+                        <a th:href="@{/fitness/yoga}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- HIIT Workouts -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/hiit.jpg" class="card-img-top" alt="HIIT Workouts">
+                    <div class="card-body">
+                        <h5 class="card-title">HIIT Workouts</h5>
+                        <p class="card-text">Burn calories and boost stamina with high-intensity interval training.</p>
+                        <a th:href="@{/fitness/hiit}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Strength Training -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/strength.jpg" class="card-img-top" alt="Strength Training">
+                    <div class="card-body">
+                        <h5 class="card-title">Strength Training</h5>
+                        <p class="card-text">Build muscle and improve strength through resistance exercises.</p>
+                        <a th:href="@{/fitness/strength}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <!-- Cardio -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/cardio.jpg" class="card-img-top" alt="Cardio Workouts">
+                    <div class="card-body">
+                        <h5 class="card-title">Cardio Workouts</h5>
+                        <p class="card-text">Improve endurance and heart health with fun cardio exercises.</p>
+                        <a th:href="@{/fitness/cardio}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pilates -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/pilates.jpg" class="card-img-top" alt="Pilates Classes">
+                    <div class="card-body">
+                        <h5 class="card-title">Pilates Classes</h5>
+                        <p class="card-text">Focus on core strength, flexibility, and balance with pilates.</p>
+                        <a th:href="@{/fitness/pilates}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Martial Arts -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/martial_arts.jpg" class="card-img-top" alt="Martial Arts">
+                    <div class="card-body">
+                        <h5 class="card-title">Martial Arts</h5>
+                        <p class="card-text">Enhance discipline, strength, and self-defense skills through martial arts.</p>
+                        <a th:href="@{/fitness/martialarts}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center mt-5 py-3">
+        <p>&copy; 2024 Health and Wellness Platform. All rights reserved.</p>
+    </footer>
+
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#32CD32" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#32CD32" },
+                    "polygon": { "nb_sides": 5 }
+                },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "repulse": { "distance": 100 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

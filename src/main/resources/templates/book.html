@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Appointment Booking Confirmation</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #4CAF50;
+        }
+
+        .message {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Appointment Booking Confirmation</h1>
+
+    <div class="message" th:class="${successMessage != null ? 'success' : 'error'}">
+        <!-- Success or error message -->
+        <p th:text="${successMessage != null ? successMessage : errorMessage}"></p>
+    </div>
+
+    <div>
+        <!-- Button to redirect to the doctors list page -->
+        <a href="/doctors">Back to Doctors List</a>
+    </div>
+</body>
+</html>

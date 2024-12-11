@@ -1,0 +1,51 @@
+package com.example;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/appointments")
+public class AppointmentController {
+
+    @Autowired
+    private AppointmentService appointmentService;
+
+    // Method for booking an appointment
+    @PostMapping("/book")
+    public String bookAppointment(@RequestParam Long doctorId,
+                                  @RequestParam String name,
+                                  @RequestParam int age,
+                                  @RequestParam String problem,
+                                  Model model) {
+        try {
+            // Logic for booking the appointment
+            Appointment appointment = new Appointment();
+            appointment.setDoctorId(doctorId);
+            appointment.setName(name);
+            appointment.setAge(age);
+            appointment.setProblem(problem);
+            appointmentService.saveAppointment(appointment);
+
+            // Add success message
+            model.addAttribute("successMessage", "Appointment booked successfully!");
+
+            // Fetch the list of all appointments
+            List<Appointment> appointments = appointmentService.getAllAppointments();
+            model.addAttribute("appointments", appointments); // Add appointments to the model
+
+            return "appointments"; // Return to the appointments page with the updated list
+        } catch (Exception e) {
+            // Add error message in case of failure
+            model.addAttribute("errorMessage", "An error occurred while booking your appointment. Please try again.");
+            return "book"; // Return to the same page in case of error
+        }
+    }
+
+}

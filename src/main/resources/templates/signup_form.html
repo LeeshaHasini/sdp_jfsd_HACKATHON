@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Place behind content */
+        }
+        .center-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1; /* Place above particle background */
+        }
+        .form-container {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgb(255, 255, 255); /* Slightly transparent white */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Centered Form Container -->
+    <div class="center-container">
+        <div class="form-container">
+            <h1>User Registration</h1>
+            <form th:action="@{/process_register}" th:object="${user}" method="post">
+                <div class="form-group mb-3">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" th:field="*{email}" class="form-control" required />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" th:field="*{password}" class="form-control" 
+                           required minlength="6" maxlength="10"/>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" th:field="*{firstName}" class="form-control" 
+                           required minlength="2" maxlength="20"/>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" th:field="*{lastName}" class="form-control" 
+                           required minlength="2" maxlength="20" />
+                </div>
+
+                <!-- Updated button with green color -->
+                <button type="submit" class="btn btn-success w-100">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#006400" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#006400" },
+                    "polygon": { "nb_sides": 5 }
+                },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#006400", "opacity": 0.4, "width": 1 },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "repulse": { "distance": 100 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Success</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; padding: 20px; }
+        .message { font-size: 24px; color: green; margin-top: 20px; }
+        .link { margin-top: 30px; display: inline-block; padding: 10px 20px; background: #4CAF50; color: #fff; text-decoration: none; border-radius: 5px; }
+        .link:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Appointment Booked Successfully!</h1>
+    <p class="message">Thank you for booking an appointment.</p>
+    <a th:href="@{/appointments/list}" class="link">View All Appointments</a>
+</body>
+</html>

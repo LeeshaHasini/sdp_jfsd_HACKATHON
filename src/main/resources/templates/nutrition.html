@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Nutrition Programs</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .program-card {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .program-card:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .program-card .card-body {
+            padding: 20px;
+        }
+        .program-card .card-body h5 {
+            font-size: 1.25rem;
+        }
+        .program-card .card-body p {
+            font-size: 1rem;
+            color: #555;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin-bottom: 0;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">Health and Wellness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/users}">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/fitness}">Fitness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/nutrition}">Nutrition</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/logout}">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Nutrition Programs</h1>
+        
+        <div class="row">
+            <!-- Weight Loss -->
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="/images/weight_loss.jpg" alt="Weight Loss Program">
+                    <div class="card-body">
+                        <h5 class="card-title">Weight Loss Program</h5>
+                        <p class="card-text">A structured plan focusing on calorie control, balanced meals, and effective strategies to shed extra pounds healthily.</p>
+                        <a th:href="@{'/nutrition/weightloss'}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vegetarian Muscle-Building Diet -->
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="/images/vegetarian_diet.jpg" alt="Vegetarian Muscle-Building Diet">
+                    <div class="card-body">
+                        <h5 class="card-title">Vegetarian Muscle-Building Diet</h5>
+                        <p class="card-text">Packed with plant-based proteins, this diet is tailored for vegetarians looking to build muscle effectively.</p>
+                        <a th:href="@{'/nutrition/vegetariandiet'}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Non-Vegetarian Muscle-Building Diet -->
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="/images/non_vegetarian_diet.jpg" alt="Non-Vegetarian Muscle-Building Diet">
+                    <div class="card-body">
+                        <h5 class="card-title">Non-Vegetarian Muscle-Building Diet</h5>
+                        <p class="card-text">A high-protein diet plan featuring lean meats, eggs, and fish for optimal muscle growth and recovery.</p>
+                        <a th:href="@{'/nutrition/nonvegetariandiet'}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- Balanced Nutrition -->
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="/images/balanced_nutrition.jpg" alt="Balanced Nutrition Plan">
+                    <div class="card-body">
+                        <h5 class="card-title">Balanced Nutrition Plan</h5>
+                        <p class="card-text">A comprehensive approach to nutrition, ensuring a perfect balance of carbs, proteins, and healthy fats.</p>
+                        <a th:href="@{'/nutrition/balancednutrition'}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Keto Diet -->
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="/images/keto_diet.jpg" alt="Keto Diet">
+                    <div class="card-body">
+                        <h5 class="card-title">Keto Diet</h5>
+                        <p class="card-text">Low-carb, high-fat diet designed to induce ketosis, helping your body burn fat for energy.</p>
+                        <a th:href="@{'/nutrition/ketodiet'}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post-Workout Nutrition -->
+            <div class="col-md-4">
+                <div class="program-card">
+                    <img src="/images/post_workout.jpg" alt="Post-Workout Nutrition">
+                    <div class="card-body">
+                        <h5 class="card-title">Post-Workout Nutrition</h5>
+                        <p class="card-text">Specially designed meals to replenish energy and repair muscles after intense workouts.</p>
+                        <a th:href="@{'/nutrition/postworkoutnutrition'}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 Health and Wellness Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

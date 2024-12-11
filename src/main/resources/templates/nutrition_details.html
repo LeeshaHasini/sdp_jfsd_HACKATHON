@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Nutrition Program Details</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        .program-detail-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .program-description, .program-benefits, .meal-plan {
+            margin-top: 30px;
+        }
+        .program-description p, .program-benefits ul, .meal-plan table {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Health and Wellness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fitness">Fitness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/nutrition">Nutrition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Healthy Eating Program Details</h1>
+
+        <!-- Program Image -->
+        <img class="program-detail-img" src="https://t3.ftcdn.net/jpg/02/48/92/96/360_F_248929619_JkVBYroM1rSrshWJemrcjriggudHMUhV.jpg">
+
+        <!-- Program Description -->
+        <div class="program-description">
+            <h3>Description</h3>
+            <p>This Healthy Eating Program is designed to help individuals achieve a balanced and nutritious diet. It emphasizes the importance of whole foods, proper meal timing, and balanced nutrition for optimal health. The program focuses on eating nutrient-dense meals that provide essential vitamins, minerals, and macronutrients to support overall well-being.</p>
+        </div>
+
+        <!-- Program Benefits -->
+        <div class="program-benefits">
+            <h3>Benefits</h3>
+            <ul>
+                <li>Improved energy levels and vitality</li>
+                <li>Better digestion and gut health</li>
+                <li>Support for weight management</li>
+                <li>Improved mental clarity and focus</li>
+            </ul>
+        </div>
+
+        <!-- Meal Plan -->
+        <div class="meal-plan">
+            <h3>Sample Meal Plan</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Meal</th>
+                        <th>Time</th>
+                        <th>Menu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Breakfast</td>
+                        <td>8:00 AM</td>
+                        <td>Oats with fresh berries, chia seeds, and a dollop of almond butter.</td>
+                    </tr>
+                    <tr>
+                        <td>Lunch</td>
+                        <td>12:30 PM</td>
+                        <td>Grilled chicken breast, quinoa, steamed broccoli, and a side salad with olive oil dressing.</td>
+                    </tr>
+                    <tr>
+                        <td>Snack</td>
+                        <td>4:00 PM</td>
+                        <td>Greek yogurt with honey and a sprinkle of mixed nuts.</td>
+                    </tr>
+                    <tr>
+                        <td>Dinner</td>
+                        <td>7:30 PM</td>
+                        <td>Baked salmon with roasted sweet potatoes and sautéed spinach.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 Health and Wellness Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

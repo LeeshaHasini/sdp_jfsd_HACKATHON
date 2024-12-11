@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Appointment Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .success-container {
+            margin: auto;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .success-message {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .details {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .home-link {
+            margin-top: 30px;
+            display: inline-block;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .home-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h1 class="success-message">Appointment Booked Successfully!</h1>
+        <p class="details">Thank you for booking an appointment. You will receive a confirmation email shortly.</p>
+        <a class="home-link" th:href="@{/}">Return to Home</a>
+    </div>
+</body>
+</html>

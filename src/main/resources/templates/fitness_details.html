@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Program Details</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Fitness Program Details</h1>
+
+        <!-- Display Program Name -->
+        <h2 class="mb-4 text-center" th:text="${program}"></h2>
+
+        <!-- Yoga Program -->
+        <div th:if="${program == 'yoga'}">
+            <p>Yoga is a mind-body practice that combines physical postures, breathing exercises, and meditation.</p>
+            <img src="/images/yoga.jpg" alt="Yoga" class="img-fluid mb-4" />
+
+            <h3>Steps</h3>
+            <ol>
+                <li>Start with a few minutes of breathing exercises to calm the mind.</li>
+                <li>Practice basic poses like Downward Dog, Warrior, and Child’s Pose.</li>
+                <li>Focus on deep breathing throughout the session to enhance relaxation.</li>
+                <li>End with a relaxation pose like Savasana.</li>
+            </ol>
+
+            <h3>Types of Yoga</h3>
+            <ul>
+                <li>Hatha Yoga: A slow-paced practice focusing on basic poses.</li>
+                <li>Vinyasa Yoga: A dynamic practice where movement is synchronized with breath.</li>
+                <li>Ashtanga Yoga: A fast-paced practice with a fixed sequence of poses.</li>
+                <li>Yin Yoga: A slow-paced practice focusing on deep stretching and long holds.</li>
+            </ul>
+        </div>
+
+        <!-- Cardio Program -->
+        <div th:if="${program == 'cardio'}">
+            <p>Cardio exercises are designed to raise your heart rate and improve cardiovascular health.</p>
+            <img src="/images/cardio.jpg" alt="Cardio Workout" class="img-fluid mb-4" />
+
+            <h3>Steps</h3>
+            <ol>
+                <li>Warm-up with light cardio exercises like walking or jogging.</li>
+                <li>Choose a cardio activity: running, cycling, swimming, or jumping rope.</li>
+                <li>Increase intensity for 20-30 minutes to raise your heart rate.</li>
+                <li>Cool down with a light walk or gentle stretching.</li>
+            </ol>
+
+            <h3>Types of Cardio</h3>
+            <ul>
+                <li>Running: A high-impact exercise that boosts endurance and burns calories.</li>
+                <li>Cycling: A low-impact cardio exercise that’s gentle on the joints.</li>
+                <li>Swimming: A full-body cardio workout that improves cardiovascular health.</li>
+                <li>HIIT (High-Intensity Interval Training): Short bursts of intense exercise followed by rest periods.</li>
+            </ul>
+        </div>
+
+        <!-- Strength Training Program -->
+        <div th:if="${program == 'strength'}">
+            <p>Strength training involves exercises to build muscle and increase strength using resistance.</p>
+            <img src="/images/strength.jpg" alt="Strength Training" class="img-fluid mb-4" />
+
+            <h3>Steps</h3>
+            <ol>
+                <li>Begin with a warm-up of dynamic stretching or light cardio.</li>
+                <li>Start with compound exercises like squats, deadlifts, and bench presses.</li>
+                <li>Use proper form to avoid injury and target specific muscle groups.</li>
+                <li>Finish with a cool-down and stretching to promote muscle recovery.</li>
+            </ol>
+
+            <h3>Types of Strength Training</h3>
+            <ul>
+                <li>Weightlifting: Lifting free weights to build strength and muscle mass.</li>
+                <li>Bodyweight Training: Using your body’s weight for resistance (e.g., push-ups, pull-ups).</li>
+                <li>Resistance Band Training: Using bands to add resistance for muscle building.</li>
+                <li>Powerlifting: Focused on three major lifts: squat, bench press, and deadlift.</li>
+            </ul>
+        </div>
+
+        <!-- Pilates Program -->
+        <div th:if="${program == 'pilates'}">
+            <p>Pilates is a low-impact exercise method focusing on core strength, flexibility, and overall body awareness.</p>
+            <img src="/images/pilates.jpg" alt="Pilates" class="img-fluid mb-4" />
+
+            <h3>Steps</h3>
+            <ol>
+                <li>Start with controlled breathing to engage the core muscles.</li>
+                <li>Perform exercises like the Hundred, Roll-Up, and Leg Circles to work on core strength.</li>
+                <li>Focus on precision and slow movements to improve flexibility and muscle tone.</li>
+                <li>End the session with a relaxation phase to calm the body and mind.</li>
+            </ol>
+
+            <h3>Types of Pilates</h3>
+            <ul>
+                <li>Mat Pilates: Exercises performed on a mat without equipment, focusing on core and flexibility.</li>
+                <li>Reformer Pilates: Uses a reformer machine with springs to provide resistance for a deeper workout.</li>
+                <li>Clinical Pilates: Tailored for injury rehabilitation and improving posture.</li>
+            </ul>
+        </div>
+
+        <!-- Martial Arts Program -->
+        <div th:if="${program == 'martialarts'}">
+            <p>Martial arts are a diverse set of practices that enhance physical strength, mental discipline, and self-defense skills.</p>
+            <img src="/images/martial_arts.jpg" alt="Martial Arts" class="img-fluid mb-4" />
+
+            <h3>Steps</h3>
+            <ol>
+                <li>Begin with a warm-up to loosen muscles and improve flexibility.</li>
+                <li>Practice basic techniques such as punches, kicks, and blocks.</li>
+                <li>Focus on combinations and drills to enhance coordination and agility.</li>
+                <li>End with stretching exercises to cool down and prevent injuries.</li>
+            </ol>
+
+            <h3>Types of Martial Arts</h3>
+            <ul>
+                <li>Karate: Focuses on striking techniques and disciplined movements.</li>
+                <li>Taekwondo: Emphasizes powerful kicks and agility.</li>
+                <li>Judo: A grappling martial art that focuses on throws and holds.</li>
+                <li>Muay Thai: Known as the "Art of Eight Limbs," it uses punches, kicks, elbows, and knees.</li>
+            </ul>
+        </div>
+
+        <!-- HIIT Program -->
+        <div th:if="${program == 'hiit'}">
+            <p>HIIT (High-Intensity Interval Training) involves alternating between intense bursts of activity and short recovery periods.</p>
+            <img src="/images/hiit.jpg" alt="HIIT" class="img-fluid mb-4" />
+
+            <h3>Steps</h3>
+            <ol>
+                <li>Warm up with dynamic movements like jogging in place or jumping jacks.</li>
+                <li>Perform short bursts of high-intensity exercises like burpees, sprints, or jump squats for 20-30 seconds.</li>
+                <li>Take a brief recovery period of 10-15 seconds.</li>
+                <li>Repeat the cycle for 15-30 minutes, depending on fitness level.</li>
+                <li>Cool down with light stretches to lower your heart rate.</li>
+            </ol>
+
+            <h3>Benefits of HIIT</h3>
+            <ul>
+                <li>Burns calories quickly and boosts metabolism.</li>
+                <li>Improves cardiovascular health and endurance.</li>
+                <li>Can be done in a short amount of time, making it convenient for busy schedules.</li>
+                <li>Enhances muscle strength and overall fitness levels.</li>
+            </ul>
+        </div>
+
+        <!-- Default Fallback -->
+        <div th:unless="${program}">
+            <p>No specific details available for this program.</p>
+        </div>
+    </div>
+</body>
+</html>
